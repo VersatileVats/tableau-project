@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Face-a-rest",
+    "version": "1.2",
+    "icons": {
+      "16": "./resources/logo16.png",
+      "32": "./resources/logo32.png",
+      "128": "./resources/logo128.png"
+    },
+    "description": "Now the Tableau REST API has got a face, that is why I named this: Face-a-rest 😉 (made for the tableau event, with love 💌)",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "tabs",
+      "storage",
+      "notifications"
+    ],
+    "background": {
+      "service_worker": "./resources/background.js"
+    }
+}

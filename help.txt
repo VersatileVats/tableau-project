@@ -1,0 +1,6 @@
+var script = document.createElement('script');
+script.src = chrome.runtime.getURL('./embedView.js') 
+script.onload = function() {
+    this.remove(); // Remove the script element once loaded
+};
+(document.head || document.documentElement).appendChild(script);
