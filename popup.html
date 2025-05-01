@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face-a-rest | Main Page</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./resources/popup.css" />
+  </head>
+  <body>
+    <h3
+      class="d-flex justify-content-center align-items-center m-3 rounded p-1"
+      style="border: 5px outset black"
+    >
+      Face-a-rest
+    </h3>
+
+    <div id="authenticate">
+      <p
+        style="
+          width: 80%;
+          margin: auto;
+          font-size: 0.7rem;
+          text-align: justify;
+          padding: 4px;
+        "
+      >
+        👋 to the Tableau Project! Provide your PAT credentials, so you can see
+        the face of the <b>Tableau's Rest & Embedding APIs</b>
+      </p>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <input
+          type="text"
+          id="pat-name"
+          class="form-control m-1 p-1 text-center"
+          placeholder="PAT Name"
+          style="width: 80%; font-size: 0.8rem"
+          value="hackathonProject"
+        />
+        <input
+          type="text"
+          id="contentUrl"
+          class="form-control m-1 p-1 text-center"
+          placeholder="Content URL"
+          style="width: 80%; font-size: 0.8rem"
+          value="versatileplayground"
+        />
+        <input
+          type="password"
+          id="pat-secret"
+          class="form-control m-1 p-1 text-center"
+          placeholder="PAT Secret"
+          style="width: 80%; font-size: 0.8rem"
+          value="PzSK+dgbSUavgSP73XI/MA==:HJQWuH1E8l7rqhgpsu3EUtQocliWsvoF"
+        />
+        <small
+          id="errorSection"
+          class="text-center m-1"
+          style="font-size: 0.7rem; max-width: 80%; display: none"
+        >
+          There are some errors in this division and I am trying to find those
+        </small>
+        <button
+          id="authenticate-button"
+          class="btn btn-outline-dark m-2 p-1"
+          style="font-size: 0.8rem; font-weight: bold"
+        >
+          Authenticate
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="userDetails"
+      class="d-flex flex-column justify-content-center align-items-center"
+      style="display: none"
+    >
+      <!-- #userInfo (sync button) -->
+      <div
+        id="userInfo"
+        style="
+          font-size: 0.75rem;
+          width: 80%;
+          text-align: justify;
+          display: none;
+        "
+      >
+        <p style="display: inline-block; width: 80%; text-align: center">
+          To sync changes, click 👉
+        </p>
+        <img
+          id="sync"
+          width="15"
+          height="15"
+          src="https://img.icons8.com/ios-filled/50/rotate-right.png"
+          alt="rotate-right"
+          style="cursor: pointer"
+        />
+      </div>
+
+      <!-- #projectsDiv -->
+      <div id="projectsDiv" style="width: 80%; display: none">
+        <p
+          style="
+            font-size: 0.75rem;
+            text-align: justify;
+            margin: auto;
+            margin-bottom: 1rem;
+          "
+        >
+          Below, you can see the various projects that you have in your Tableau
+          Cloud account. Click on the project to see its contents <br />
+          <br />
+          Here are the projects in your Tableau Cloud Acccount:
+        </p>
+
+        <div
+          id="projectsList"
+          style="
+            max-height: 120px;
+            overflow: auto;
+            border: 2px dashed black;
+            border-radius: 5px;
+          "
+        ></div>
+
+        <p
+          style="
+            font-size: 0.75rem;
+            text-align: justify;
+            margin: auto;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+          "
+        >
+          You can find your bookmarked workbooks/projects via the link: <br />
+        </p>
+        <p style="text-align: center; text-decoration: underline">
+          <span id="favoriteLink" style="cursor: pointer"
+            >See my favorites</span
+          >
+        </p>
+      </div>
+      <small
+        id="detailsError"
+        class="text-center m-1 text-success"
+        style="font-size: 0.7rem; max-width: 80%; display: none"
+      >
+      </small>
+      <button
+        id="logout-button"
+        class="btn btn-outline-success m-2 p-1"
+        style="font-size: 0.8rem; display: none; font-weight: bold"
+      >
+        Logout
+      </button>
+    </div>
+
+    <script type="module" src="./resources/popup.js"></script>
+  </body>
+</html>
